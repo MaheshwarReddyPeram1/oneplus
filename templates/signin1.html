@@ -1,0 +1,72 @@
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+	{%for messages in messages %}
+	{% if messages %}
+      <script>
+          alert("Please Enter your details/currectly")
+      </script>
+	{% endif %}
+	{%endfor%}
+</head>
+
+<body>
+		
+<h2>JVT CONNECT</h2>
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-up-container">
+		<form action="/signup" method = "POST" onsubmit="return validate()">
+			{% csrf_token %}
+			<h3>Create Account</h3>
+			<input type="text" id = "fullname" name = "fullname" placeholder="Full name">
+			<input type="email" id = "email" name = "email" placeholder="Email">
+            <input type="date" id = "dob" name = "Date" placeholder="DOB">
+            <input type="text" id = "mobile" name = "Phonenumber" placeholder="Mobile number">
+            <input type="password" id = "pass" name = "pass" placeholder="password">
+            <input type="password" id = "rpass" name = "rpass" placeholder="confirm password">
+            <button type="submit">Submit</button>
+		</form>
+	</div>
+	
+	<div class="form-container sign-in-container">
+		<form action="{% url 'signin' %}" method="POST" onsubmit="return validateform()">
+			{% csrf_token %}
+			<h1>JvT CoNnEcT</h1>
+			<img src="{% static 'css/connect.jpg' %}" align="center" >
+			<h1>Sign in</h1>
+				<input type="email" id ="username" name = "email" placeholder="Email">
+				<input type="password" id ="password" name = "password" placeholder="Password">
+				<button type = "submit">Sign In</button>
+				<a href="/forgotpassword">Forgot password?</a>
+		</form>
+	</div>
+	
+	<div class="overlay-container">
+		
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="{% static 'js/signin.js' %}"></script>
+
+</body>
+
+</html>

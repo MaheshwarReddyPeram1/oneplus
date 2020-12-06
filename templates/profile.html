@@ -1,0 +1,191 @@
+{% load static %}
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container emp-profile">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src = "{{p.image.url}}" alt = "" width="145" height="23432" alt = "asdf">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{p.name}}
+                                    </h5>
+                                    <h6>
+                                        {{p.specialization}}
+                                    </h6>
+                                    <p class="proile-rating">STATUS : <span>Looking for job</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="/edit"><input type = "button" class="profile-edit-btn" value = "Edit Profile"></a>
+                    </div>
+                        <div class="tab-content profile-tab">
+                            <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Username</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.name}}</p>
+                                            </div>
+                                        <hr>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.email}}</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Mobile Number</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.phonenumber}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Date of Birth</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.dob}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.gender}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Current Location</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.Location}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.Address}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.Profession}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Company name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.company}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Date of joining</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.joindate}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total experience</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.Experience}} years</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Skills</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.skills}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Projects</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.projects}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Course</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.course}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Specialization</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.specialization}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>year of passout</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.year}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Institute/Univesity</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{p.college}}</p>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="/home"><input type = "button" class="profile-edit-btn" value = "BACK"></a>
+                    </div>
+            </form>           
+</div>

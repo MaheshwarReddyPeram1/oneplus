@@ -14,7 +14,7 @@ SECRET_KEY = 'mi8(viqwqv!-bk(m&i^2uu((3h*)o31$^0z_%5xi_2cy)ub&^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['onemoremy.herokuapp.com']
 
 
 # Application definition
